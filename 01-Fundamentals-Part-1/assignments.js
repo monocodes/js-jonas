@@ -1,4 +1,4 @@
-// LECTURE: Values and Variables
+/* LECTURE: Values and Variables */
 /* 
 let country = "Armenia";
 let continent = "Eurasia";
@@ -9,7 +9,7 @@ console.log(continent);
 console.log(population);
  */
 
-// LECTURE: Data Types
+/* LECTURE: Data Types */
 /* 
 let isIsland = false;
 let language;
@@ -19,7 +19,7 @@ console.log(typeof country);
 console.log(typeof language);
  */
 
-// LECTURE: let, const and var
+/* LECTURE: let, const and var */
 /* 
 language = "Armenian";
 const country = "Armenia";
@@ -28,7 +28,7 @@ const isIsland = false;
 // isIsland = true
  */
 
-// LECTURE: Basic Operators
+/* LECTURE: Basic Operators */
 /* 
 let population = 2;
 const language = "Armenian";
@@ -56,4 +56,30 @@ const description =
   language;
 
 console.log(description);
+ */
+
+/* Lecture: Strings and Template Literals */
+/* 
+const population = 2;
+const language = "Armenian";
+const country = "Armenia";
+const continent = "Eurasia";
+
+const description = `${country} is in ${continent}, and its ${population} million people speak ${language}`;
+
+console.log(description);
+ */
+
+// Lecture: Taking Decisions: if / else Statements
+/*  
+const population = 2;
+const country = "Armenia";
+
+if (population > 33) {
+  console.log(`${country}'s population is above average`);
+} else {
+  console.log(
+    `${country}'s population is ${33 - population} million below average`
+  );
+}
  */
