@@ -236,3 +236,68 @@ if (height) {
   console.log("Height is UNDEFINED");
 }
  */
+
+// Equality Operators: == vs ===
+/* 
+// === - strict, without type coercion
+// == - loose, with type coercion, avoid using it as much as possible
+
+const age = "18";
+if (age === 18) console.log("You've just become an adult (strict) :D");
+
+if (age == 18) console.log("You've just become an adult (loose) :D");
+
+console.log(18 === 18);
+console.log(18 === 19);
+
+console.log("18" == 18);
+console.log("18" === 18);
+
+const favorite = Number(prompt("What's your favorite number?"));
+console.log(typeof favorite);
+
+// if (favorite == 23) { // '23' == 23
+//   console.log(`Cool! ${favorite} is an amazing`)
+// }
+
+if (favorite === 23) {
+  // 23 === 23
+  console.log(`Cool! ${favorite} is an amazing`);
+} else if (favorite === 7) {
+  console.log(`${favorite} is also a cool number`);
+} else if (favorite === 9) {
+  console.log(`${favorite} is also a cool number`);
+} else {
+  console.log("Number is not 23 or 7 or 9");
+}
+
+// !== - strict, without type coercion
+// != - loose, with type coercion, avoid using it as much as possible
+
+if (favorite !== 23) console.log("Why not 23?");
+ */
+
+// Boolean Logic
+/* 
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+// if (hasDriversLicense && hasGoodVision) {
+//   console.log("Sarah is able to drive!");
+// } else {
+//   console.log("Someone else should drive...");
+// }
+
+const isTired = false; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log("Sarah is able to drive!");
+} else {
+  console.log("Someone else should drive...");
+}
+ */
