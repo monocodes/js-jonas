@@ -1,3 +1,4 @@
+//////////////////////////////////////////////////////////////////////////////
 // Coding Challenge #1
 /*
 // Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter). 
@@ -163,6 +164,7 @@ if (BMIMark > BMIJohn) {
 }
  */
 
+//////////////////////////////////////////////////////////////////////////////
 // LECTURE Coding Challenge #3
 /* 
 There are two gymnastics teams: Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins a trophy!
@@ -192,6 +194,7 @@ TEST DATA: Dolphins scored 96, 108, and 89. Koalas scored 88, 91, and 110.
 //   console.log("Koalas win the trophy");
 // } else console.log("Both win the trophy");
 
+//////////////////////////////////////////////////////////////////////////////
 // Coding Challenge 3
 /* 
 There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins a trophy!
@@ -207,19 +210,46 @@ Test data:
 § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
  */
 
-let scoreDolphins = (96 + 108 + 89) / 3;
-let scoreKoalas = (88 + 91 + 110) / 3;
-scoreDolphins = (97 + 112 + 101) / 3;
-scoreKoalas = (109 + 95 + 123) / 3;
-scoreDolphins = (97 + 112 + 101) / 3;
-scoreKoalas = (109 + 95 + 106) / 3;
+// let scoreDolphins = (96 + 108 + 89) / 3;
+// let scoreKoalas = (88 + 91 + 110) / 3;
+// scoreDolphins = (97 + 112 + 101) / 3;
+// scoreKoalas = (109 + 95 + 123) / 3;
+// scoreDolphins = (97 + 112 + 101) / 3;
+// scoreKoalas = (109 + 95 + 106) / 3;
 
-console.log(`Dolphins: ${scoreDolphins}\nKoalas: ${scoreKoalas}`);
+// console.log(`Dolphins: ${scoreDolphins}\nKoalas: ${scoreKoalas}`);
 
-if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
-  console.log("Dolphins win the trophy 🏆");
-} else if (scoreDolphins < scoreKoalas && scoreKoalas >= 100) {
-  console.log("Koalas win the trophy 🏆");
-} else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100) {
-  console.log("Both win the trophy 🏆");
-} else console.log("Noone win the trophy 🥲");
+// if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+//   console.log("Dolphins win the trophy 🏆");
+// } else if (scoreDolphins < scoreKoalas && scoreKoalas >= 100) {
+//   console.log("Koalas win the trophy 🏆");
+// } else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100) {
+//   console.log("Both win the trophy 🏆");
+// } else console.log("Noone win the trophy 🥲");
+
+//////////////////////////////////////////////////////////////////////////////
+// Coding Challenge #4
+/* 
+Steven needs a very simple tip calculator for whenever he goes to eat in a restaurant. In his country, it's usual to tip 15% if the bill value is between 50 and 300. If the value is different, the tip is 20%.
+
+Your tasks:
+
+Calculate the tip, depending on the bill value. Create a variable called tip for this. It's not allowed to use an if...else statement (if it's easier for you, you can start with an if...else statement, and then try to convert it to a ternary operator).
+
+Print a string to the console containing the bill value, the tip, and the final value (bill + tip).
+
+Example: The bill was 275, the tip was 41.25, and the total value 316.25.
+
+Note: Use the values of the bill and tip variables to construct this string. Don't hard-code them 🙂
+
+TEST DATA: Test with different bill values: 275, 40, and 430
+ */
+
+// const bill = 275;
+// const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+// console.log(
+//   `The bill was ${bill}, the tip was ${tip}, and the total value ${
+//     bill + tip
+//   }.`
+// );

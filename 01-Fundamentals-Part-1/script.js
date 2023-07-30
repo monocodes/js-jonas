@@ -1,3 +1,4 @@
+//////////////////////////////////////////////////////////////////////////////
 // Values and Variables
 /*
 let js = "amazing";
@@ -12,6 +13,7 @@ console.log(firstName);
 console.log(firstName);
 console.log(firstName);
 
+//////////////////////////////////////////////////////////////////////////////
 // Variable name conventions
 let jonas_matilda = "JM";
 let $function = 27;
@@ -29,6 +31,7 @@ let job2 = "teacher";
 console.log(myFirstJob);
 */
 
+//////////////////////////////////////////////////////////////////////////////
 // Data Types
 /*
 let javascriptIsFun = true;
@@ -69,6 +72,7 @@ lastName = "Schmedtmann";
 console.log(lastName);
 */
 
+//////////////////////////////////////////////////////////////////////////////
 // Basic Operators
 /* 
 // math operators
@@ -105,6 +109,7 @@ const isFullAge = ageSarah >= 18;
 console.log(now - 1991 > now - 2018);
  */
 
+//////////////////////////////////////////////////////////////////////////////
 // Operator Precedence
 /* 
 const now = 2037;
@@ -123,6 +128,7 @@ const averageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, averageAge);
  */
 
+//////////////////////////////////////////////////////////////////////////////
 // Strings and Template Literals
 /* 
 const firstName = "Jonas";
@@ -153,6 +159,7 @@ strings
 `);
  */
 
+//////////////////////////////////////////////////////////////////////////////
 // Taking Decisions: if / else Statements
 /* 
 const age = 15;
@@ -180,6 +187,7 @@ if (birthYear <= 2000) {
 console.log(century);
  */
 
+//////////////////////////////////////////////////////////////////////////////
 // Type Conversion and Coercion
 /* 
 // type conversion
@@ -205,6 +213,7 @@ n = n - 1; // 10
 console.log(n);
  */
 
+//////////////////////////////////////////////////////////////////////////////
 // Truthy and Falsy Values
 /* 
 // 5 falsy values: 0, '', undefined, null, NaN
@@ -237,6 +246,7 @@ if (height) {
 }
  */
 
+//////////////////////////////////////////////////////////////////////////////
 // Equality Operators: == vs ===
 /* 
 // === - strict, without type coercion
@@ -277,6 +287,7 @@ if (favorite === 23) {
 if (favorite !== 23) console.log("Why not 23?");
  */
 
+//////////////////////////////////////////////////////////////////////////////
 // Boolean Logic
 /* 
 const hasDriversLicense = true; // A
@@ -300,4 +311,84 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
   console.log("Someone else should drive...");
 }
+ */
+
+//////////////////////////////////////////////////////////////////////////////
+// The switch Statement
+/* 
+const day = "monday";
+
+switch (day) {
+  case "monday": // day === "monday"
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples");
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend :D");
+    break;
+  default:
+    console.log("Not a valid day!");
+}
+
+// The same example using if else
+if (day === "monday") {
+  console.log("Plan course structure");
+  console.log("Go to coding meetup");
+} else if (day === "tuesday") {
+  console.log("Prepare theory videos");
+} else if (day === "wednesday" || day === "thursday") {
+  console.log("Write code examples");
+} else if (day === "friday") {
+  console.log("Record videos");
+} else if (day === "saturday" || day === "sunday") {
+  console.log("Enjoy the weekend :D");
+} else console.log("Not a valid day!");
+ */
+
+//////////////////////////////////////////////////////////////////////////////
+// Statements and Expressions
+/* 
+3 + 4; // expression
+1991; // expression
+true && false && !false; // expression
+
+if (23 > 10) {
+  const str = "23 is bigger";
+} // statement
+
+const me = "Jonas";
+console.log(`I'm ${2037 - 1991} years old ${me}`); // statement
+ */
+
+//////////////////////////////////////////////////////////////////////////////
+// The Conditional (Ternary) Operator
+/* 
+const age = 23;
+age >= 18
+  ? console.log("I like to drink wine 🍷")
+  : console.log("I like to drink water 💧");
+
+const drink = age >= 18 ? "wine 🍷" : "water 💧";
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+  drink2 = "wine 🍷";
+} else {
+  drink2 = "water 💧";
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`);
  */
