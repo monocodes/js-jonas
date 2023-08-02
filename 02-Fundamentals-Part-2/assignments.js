@@ -67,7 +67,7 @@ console.log(percentArmenia3, percentJapan3, percentSpain3);
 2. To calculate the percentage, 'describePopulation' call the 'percentageOfWorld1' you created earlier
 3. Call 'describePopulation' with data for 3 countries of your choice
  */
-/* 
+
 // Function Declaration
 function describePopulation(country, population) {
   console.log(
@@ -103,7 +103,6 @@ const describePopulationAr = (country, population) =>
 describePopulationAr("Armenia", 2);
 describePopulationAr("Japan", 125);
 describePopulationAr("Spain", 47);
- */
 
 //////////////////////////////////////////////////////////////////////////////
 //
