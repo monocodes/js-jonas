@@ -112,4 +112,45 @@ console.log(fruitProcessor(2, 3));
  */
 
 //////////////////////////////////////////////////////////////////////////////
-//
+// Reviewing Functions
+/* 
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+
+  if (retirement > 0) {
+    console.log(`${firstName} retires in ${retirement} years`);
+    return retirement;
+  } else {
+    console.log(`${firstName} has already retired 🎉`);
+    return -1; // -1 is standard "no-meaning" number in programming
+  }
+
+  return retirement;
+};
+
+console.log(yearsUntilRetirement(1991, "Jonas"));
+console.log(yearsUntilRetirement(1950, "Mike"));
+
+// Three different ways of writing functions, but they all work in a similar way: receive input data, transform data, and the output data.
+// Function declarations
+// Can be used before it's declared
+function calcAgeDe(birthYear) {
+  return 2037 - birthYear;
+}
+
+// Function expressions
+// Function value stored on a varibale
+const calcAgeEx = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+// Arrow functions
+// Great for a quick one-line functions
+// Has no 'this' keyword
+const calcAgeAr = (birthYear) => 2037 - birthYear;
+ */
