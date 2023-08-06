@@ -207,7 +207,7 @@ console.log(ages);
 
 //////////////////////////////////////////////////////////////////////////////
 // Basic Array Operations (Methods)
-
+/* 
 "use strict";
 
 // Add elements to the array
@@ -251,3 +251,128 @@ console.log(friends.includes(23));
 if (friends.includes("Steven")) {
   console.log("You have a friend called Peter");
 }
+ */
+
+//////////////////////////////////////////////////////////////////////////////
+// Introduction to Objects
+/* 
+"use strict";
+
+// Array
+const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+// Object (dictionary in Python)
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"]
+};
+ */
+
+//////////////////////////////////////////////////////////////////////////////
+// Dot vs. Bracket Notation
+/* 
+"use strict";
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
+console.log(jonas);
+
+// Dot notation
+console.log(jonas.lastName);
+
+// Bracket notation
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+const interestedIn = prompt(
+  "What do you want about Jonas? Choose between firstName, lastName, age, job, and friends"
+);
+
+// console.log(jonas.interestedIn);
+// 'undefined' because 'jonas' object does not have property 'jonas.interestedIn'
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName, age, job, and friends"
+  );
+}
+
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonasschmedtmann";
+console.log(jonas);
+
+// Challenge
+// "Jonas has 3 friends, and his best friend is Michael"
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`);
+ */
+
+//////////////////////////////////////////////////////////////////////////////
+// Object Methods
+/* 
+"use strict";
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriverLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.hasDriverLicense ? "a" : "no"} driver's license.`;
+  },
+};
+
+// 'this' keyword is used to refer to an current object
+
+jonas.calcAge(); // method is needed to be run or it will not work, property will never exist otherwise
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+// console.log(jonas["calcAge"](1991));
+
+// Challenge
+// "Jonas is a 46-year old teacher, and he has a driver's license."
+
+console.log(jonas.getSummary());
+ */
+
+//////////////////////////////////////////////////////////////////////////////
+// 
