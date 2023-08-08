@@ -257,11 +257,54 @@ for (let i = 0; i < populations.length; i++) {
 }
 
 // This loop is checking that all the values in two arrays are identical
-for (let i = 0; i < percentages.length; i++){
+for (let i = 0; i < percentages.length; i++) {
   console.log(percentages[i] === percentages2[i]);
 }
 
 console.log(percentages, percentages2);
 
 //////////////////////////////////////////////////////////////////////////////
-// 
+// LECTURE: Looping Backwards and Loops in Loops
+/* 
+1. Store this array of arrays into a variable called 'listOfNeighbours' [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+2. Log only the neighbouring countries to the console, one by one, not the entire arrays. Log a string like 'Neighbour: Canada' for each country
+3. You will need a loop inside a loop for this. This is actually a bit tricky, so don't worry if it's too difficult for you! But you can still try to figure this out anyway 😉
+ */
+
+const listOfNeighbours = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
+
+for (let i = 0; i < listOfNeighbours.length; i++)
+  for (let y = 0; y < listOfNeighbours[i].length; y++)
+    console.log(`Neighbour: ${listOfNeighbours[i][y]}`);
+
+//////////////////////////////////////////////////////////////////////////////
+// LECTURE: The while Loop
+/* 
+1. Recreate the challenge from the lecture 'Looping Arrays, Breaking and Continuing', but this time using a while loop (call the array 'percentages3')
+2. Reflect on what solution you like better for this task: the for loop or the while loop? 
+ */
+
+// Already defined earlier
+// const populations = [2, 125, 47, 5];
+const percentages3 = [];
+
+for (let i = 0; i < populations.length; i++) {
+  percentages2.push(percentageOfWorld1(populations[i]));
+}
+
+let counter = 0;
+while (counter < populations.length) {
+  percentages3.push(percentageOfWorld1(populations[counter]));
+  counter++
+}
+
+// This loop is checking that all the values in two arrays are identical
+for (let i = 0; i < percentages.length; i++) {
+  console.log(percentages[i] === percentages3[i]);
+}
+
+console.log(percentages, percentages3);
