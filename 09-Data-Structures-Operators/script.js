@@ -48,7 +48,7 @@ console.log(p, q, r);
 
 /////////////////////////////////////////////////
 // Destructuring Objects
-/* 
+
 'use strict';
 
 // Data needed for first part of the section
@@ -87,10 +87,19 @@ const restaurant = {
       `Order receieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is you delicious past with ${ing1}, ${ing2}, ${ing3}`);
+  },
+
+  orderPizza: function (mainInredient, ...otherIngredients) {
+    console.log(mainInredient);
+    console.log(otherIngredients);
+  },
 };
 
 // Passing object to function and destructure it
-
+/* 
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
@@ -140,5 +149,105 @@ console.log(o, c);
 
 /////////////////////////////////////////////////
 // The Spread Operator (...)
+/* 
+('use strict');
 
-'use strict';
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+console.log(1, 2, 7, 8, 9);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy array with spread (...) operator
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays with spread (...) operator
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Iterables: arrays, strings, maps, sets. NOT objects (but since ES 2018 it is working with objects also)
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+console.log(...str);
+// console.log(`${...str} Schmedtmann`);
+// SyntaxError: Unexpected token '...'
+
+// Real-world example
+const ingredients = [
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt("Let's make pasta! Ingredient 2?"),
+  // prompt("Let's make pasta! Ingredient 3?"),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients);
+
+// Objects and spread (...) operator
+const newRestaurant = { foundingIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+// Make full object copy with spread (...) operator
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+ */
+
+/////////////////////////////////////////////////
+// Rest Pattern and Parameters
+// Rest Pattern is the opposite of Spread Operator
+// Rest Pattern is to collect multiple elements and condense them into array
+/* 
+('use strict');
+
+// 1) Destructuring
+
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+// Arrays
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+console.log(sat);
+
+// 2) Functions
+// Rest Parameters and Rest Arguments
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+ */
+
+/////////////////////////////////////////////////
+// Short Circuiting (&& and ||)
