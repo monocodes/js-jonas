@@ -251,3 +251,37 @@ restaurant.orderPizza('mushrooms');
 
 /////////////////////////////////////////////////
 // Short Circuiting (&& and ||)
+
+('use strict');
+
+// && - OR operator will return the first truthy value of all the operands or the last value if all of them are falsy
+console.log('-------- OR --------');
+// Use ANY data type, return ANY data type, short-curcuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// This will not work with 0 as initial value because 0 is a falsy value
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+// Short-curcuiting is way better than ternary operator of if-else statements
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+// && - AND operator will return the first falsy value or the last value if all of them are truthy
+console.log('-------- AND --------');
+console.log(0 && 'Jonas');
+console.log(7 && 'True');
+
+console.log('Hello' && 23 && null && 'jonas');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
