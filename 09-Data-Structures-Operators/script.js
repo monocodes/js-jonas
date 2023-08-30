@@ -205,7 +205,7 @@ console.log(restaurant.name);
 /////////////////////////////////////////////////
 // Rest Pattern and Parameters
 // Rest Pattern is the opposite of Spread Operator
-// Rest Pattern is to collect multiple elements and condense them into array
+// Rest Pattern is useful to collect multiple elements and condense them into array
 /* 
 ('use strict');
 
@@ -251,7 +251,7 @@ restaurant.orderPizza('mushrooms');
 
 /////////////////////////////////////////////////
 // Short Circuiting (&& and ||)
-
+/* 
 ('use strict');
 
 // && - OR operator will return the first truthy value of all the operands or the last value if all of them are falsy
@@ -269,7 +269,7 @@ restaurant.numGuests = 0;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
 
-// Short-curcuiting is way better than ternary operator of if-else statements
+// Short-curcuiting is way better than ternary operator or if-else statements
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
 
@@ -285,3 +285,56 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+ */
+
+/////////////////////////////////////////////////
+// The Nullish Coalescing Operator (??)
+/* 
+('use strict');
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// Nullish: null and undefined (NOT 0 or '')
+// 0 and '' are truthy values for this operator
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+ */
+
+/////////////////////////////////////////////////
+// Logical Assigment Operators
+/* 
+('use strict');
+
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR assigment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// Nullish assigment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND assigment operator
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+ */
