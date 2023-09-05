@@ -255,7 +255,7 @@ restaurant.orderPizza('mushrooms');
 /* 
 ('use strict');
 
-// && - OR operator will return the first truthy value of all the operands or the last value if all of them are falsy
+// || - OR operator will return the first truthy value of all the operands or the last value if all of them are falsy
 console.log('-------- OR --------');
 // Use ANY data type, return ANY data type, short-curcuiting
 console.log(3 || 'Jonas');
@@ -368,6 +368,9 @@ for (const [i, el] of menu.entries()) {
 
 /////////////////////////////////////////////////
 // Optional Chaining (?.)
+/*
+
+'use strict';
 
 // if (restaurant.openingHours.fri) console.log(restaurant.openingHours.fri.open);
 if (restaurant.openingHours && restaurant.openingHours.mon)
@@ -402,6 +405,35 @@ console.log(users[0]?.name ?? 'User array empty');
 
 if (users.length > 0) console.log(users[0].name);
 else console.log('User array empty');
+ */
 
 /////////////////////////////////////////////////
 // Looping Objects: Object Keys, Values and Entries
+/* 
+('use strict');
+
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// [key, value]
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+ */
