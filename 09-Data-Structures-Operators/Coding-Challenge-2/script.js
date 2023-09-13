@@ -67,9 +67,7 @@ const game = {
 
 // 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
 
-const scoredPlayers = [...game.scored];
-
-for (const [i, player] of scoredPlayers.entries()) {
+for (const [i, player] of game.scored.entries()) {
   console.log(`Goal ${i + 1}: ${player}`);
 }
 
