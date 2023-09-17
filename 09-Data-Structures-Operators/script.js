@@ -528,7 +528,7 @@ console.log(rest.get(arr));
 
 /////////////////////////////////////////////////
 // Maps: Iteration
-
+/* 
 ('use strict');
 
 const question = new Map([
@@ -563,3 +563,4 @@ console.log([...question]);
 console.log(question.entries()); // exactly the same as a previous one
 console.log([...question.keys()]);
 console.log([...question.values()]);
+ */
