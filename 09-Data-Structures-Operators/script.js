@@ -564,3 +564,155 @@ console.log(question.entries()); // exactly the same as a previous one
 console.log([...question.keys()]);
 console.log([...question.values()]);
  */
+
+/////////////////////////////////////////////////
+// Working With Strings - Part 1
+/* 
+('use strict');
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+// String Methods
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal')); // 8
+console.log(airline.indexOf('portugal')); // -1
+
+console.log(airline.slice(4)); // Air Portugal
+console.log(airline.slice(4, 7)); // 'Air' without space after Air (7 - 4 = 3)
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // + 1 to start from 'P'
+
+console.log(airline.slice(-2)); // 'al' - starting from the end
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat 😬');
+  else console.log('You got lucky 😎');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+// Behind the scenes JavaScript converts primitive string to a string object with String function
+console.log(new String('jonas'));
+console.log(typeof new String('jonas'));
+
+console.log(typeof new String('jonas').slice(1));
+ */
+
+/////////////////////////////////////////////////
+// Working With Strings - Part 2
+/* 
+('use strict');
+
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log('jonas'.toUpperCase());
+
+// Fix capitalization in name
+// JavaScript rediculous capitalization
+const passenger = 'jOnAS'; // Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+const capitilizeMe = function (word) {
+  const wordLower = word.toLowerCase();
+  const wordCorrect = wordLower[0].toUpperCase() + wordLower.slice(1);
+  return wordCorrect;
+};
+
+console.log(capitilizeMe('Wan'));
+console.log(capitilizeMe('moNo'));
+
+// trim() (trimEnd and trimStart) method removes all whitespaces including \n from both ends of the string
+
+// Comparing email
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Email comparing function
+const compareEmail = function (email1, email2) {
+  return email1 === email2;
+};
+
+console.log(compareEmail(email, loginEmail));
+
+// Email normalization function
+const fixEmail = function (email) {
+  const fixedEmail = email.toLowerCase().trim();
+  return `${email.trim()} -> ${fixedEmail}`;
+};
+
+console.log(fixEmail(loginEmail));
+
+// Replacing the parts of string
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+
+// Will be replaced only first occurence of 'door'
+console.log(announcement.replace('door', 'gate'));
+
+// Modern replaceAll method
+console.log(announcement.replaceAll('door', 'gate'));
+
+// RegEx - syntax is like sed syntax, because its normal RegEx
+console.log(announcement.replaceAll(/door/g, 'gate'));
+
+// Booleans
+// includes, startsWith, endsWith
+
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+ */
+
+/////////////////////////////////////////////////
+// Working With Strings - Part 3
