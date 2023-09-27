@@ -625,13 +625,14 @@ console.log(airline.toLowerCase());
 console.log('jonas'.toUpperCase());
 
 // Fix capitalization in name
-// JavaScript rediculous capitalization
+// JavaScript ridiculous capitalization
 const passenger = 'jOnAS'; // Jonas
 const passengerLower = passenger.toLowerCase();
 const passengerCorrect =
   passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect);
 
+// Capitilize word function
 const capitilizeMe = function (word) {
   const wordLower = word.toLowerCase();
   const wordCorrect = wordLower[0].toUpperCase() + wordLower.slice(1);
@@ -685,7 +686,7 @@ console.log(announcement.replace('door', 'gate'));
 console.log(announcement.replaceAll('door', 'gate'));
 
 // RegEx - syntax is like sed syntax, because its normal RegEx
-console.log(announcement.replaceAll(/door/g, 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
 
 // Booleans
 // includes, startsWith, endsWith
@@ -716,3 +717,71 @@ checkBaggage('Got some snacks and a gun for protection');
 
 /////////////////////////////////////////////////
 // Working With Strings - Part 3
+/* 
+('use strict');
+
+// Split and join
+// Split method to divide strings by divider to an array
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
+// Join method to join elements from array to string
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+// Capitilize multiple words function
+const capitilizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // Capitilize with push method
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+
+    // Capitilize with replace method
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+capitilizeName('jessica ann smith davis');
+capitilizeName('jonas schmedtmann');
+
+// Padding - method to add a number of characters to the string until the string has a certail desired lenth
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+// +++++++++++Go to gate 23!+++++
+console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
+// +++++++++++++++Jonas++++++++++
+
+// Credit Card masking function using padding
+const maskCreditCard = function (number) {
+  // Convert a number to the string
+  // or const str = String(number)
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(64637836));
+console.log(maskCreditCard(43378463864647384));
+console.log(maskCreditCard('334859493847755774747'));
+
+// Repeat - method to repeat string multiple times
+const message2 = 'Bad weather... All Departures Delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩️'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+ */
+
+/////////////////////////////////////////////////
+//
