@@ -78,7 +78,7 @@ checkIn(flight, jonas);
 
 /////////////////////////////////////////////////
 // Functions Accepting Callback Functions
-
+/* 
 'use strict';
 
 const oneWord = function (str) {
@@ -113,3 +113,103 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
+ */
+
+/////////////////////////////////////////////////
+// Functions Returning Functions
+/* 
+'use strict';
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+
+greeterHey('Jonas');
+greeterHey('Steven');
+
+// Function call with another parameter for function inside function
+greet('Hello')('Jonas');
+
+// Challenge
+// Create greet and greeter functions using only arrow functions
+
+const greetArr = greeting => {
+  const greeterArr = name => console.log(`${greeting} ${name}`);
+  return greeterArr;
+};
+greetArr('Hi')('Mono');
+
+// Jonas' solution
+const greetArrJ = greeting => name => console.log(`${greeting} ${name}`);
+greetArrJ('Yo')('Takashi-kun');
+ */
+
+/////////////////////////////////////////////////
+// The call and apply Methods
+/* 
+'use strict';
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // Enchanced object literal syntax for object methods (functions)
+  // instead of old way:
+  // book: function() {}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    // Creating an array with objects inside
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Jonas Schmedtmann');
+lufthansa.book(635, 'John Smith');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// Does NOT work because it is method copy and 'this' keyword from method points to 'undefined'
+// book(23, 'Sarah Williams');
+
+// Call method
+// We call the call method that calls book method (function) with 'this' keyword set to 'eurowings' as the first argument of the call method
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper');
+console.log(swiss);
+
+// Apply method
+// The same as the call method but receives an array of arguments instead of just a list
+// It is not used anymore in modern JS, just use the call method with spread operator (...)
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+book.call(swiss, ...flightData);
+ */
+
+/////////////////////////////////////////////////
+// The bind Method
