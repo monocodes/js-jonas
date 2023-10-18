@@ -150,8 +150,8 @@ greetArrJ('Yo')('Takashi-kun');
 
 /////////////////////////////////////////////////
 // The call and apply Methods
-/* 
-'use strict';
+
+('use strict');
 
 const lufthansa = {
   airline: 'Lufthansa',
@@ -181,11 +181,11 @@ const eurowings = {
 
 const book = lufthansa.book;
 
-// Does NOT work because it is method copy and 'this' keyword from method points to 'undefined'
+// Does NOT work because it is method copy and THIS keyword from method points to 'undefined'
 // book(23, 'Sarah Williams');
 
 // Call method
-// We call the call method that calls book method (function) with 'this' keyword set to 'eurowings' as the first argument of the call method
+// We call the call method that calls book method (function) with THIS keyword set to 'eurowings' as the first argument of the call method
 book.call(eurowings, 23, 'Sarah Williams');
 console.log(eurowings);
 
@@ -209,7 +209,73 @@ book.apply(swiss, flightData);
 console.log(swiss);
 
 book.call(swiss, ...flightData);
- */
 
 /////////////////////////////////////////////////
 // The bind Method
+
+// bind method - like a call method, differ from it that doesn't immediately call the function instead it return a new function with THIS keyword bound and predefined arguments (already set)
+
+('use strict');
+
+// book.call(eurowings, 23, 'Sarah Williams');
+
+// Specifying parts of the argument beforehand is a common pattern called a PARTIAL APPLICATION
+
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Steven Williams');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Jonas Schmedtmann');
+bookEW23('Martha Cooper');
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+// lufthansa.buyPlane();
+
+// This won't work because THIS keyword will point to the button in this example not to the lufthansa object
+// document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane);
+
+// Use bind method
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application (presetting parameters)
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+// null is for THIS keyword, NULL is a standard, but any variable can be used, it's better to just use NULL
+const addVAT = addTax.bind(null, 0.23);
+// The same as:
+// addVAT = value => value + value * 0.23;
+
+console.log(addVAT(100));
+console.log(addVAT(23));
+
+// Challenge
+// Define function from last example but with 'Functions Returning Functions'
+const addTaxRe = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const addTaxReRU = addTaxRe(0.2);
+
+console.log(addTaxReRU(100));
+console.log(addTaxRe(0.2)(100));
+
+const addTaxReArr = rate => value => value + value * rate;
+console.log(addTaxReArr(0.13)(100));
+
+const addTaxReArrVAT = addTaxReArr(0.2);
+console.log(addTaxReArrVAT(200));
