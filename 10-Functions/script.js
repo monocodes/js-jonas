@@ -150,7 +150,7 @@ greetArrJ('Yo')('Takashi-kun');
 
 /////////////////////////////////////////////////
 // The call and apply Methods
-
+/* 
 ('use strict');
 
 const lufthansa = {
@@ -209,12 +209,13 @@ book.apply(swiss, flightData);
 console.log(swiss);
 
 book.call(swiss, ...flightData);
+ */
 
 /////////////////////////////////////////////////
 // The bind Method
 
 // bind method - like a call method, differ from it that doesn't immediately call the function instead it return a new function with THIS keyword bound and predefined arguments (already set)
-
+/* 
 ('use strict');
 
 // book.call(eurowings, 23, 'Sarah Williams');
@@ -279,3 +280,4 @@ console.log(addTaxReArr(0.13)(100));
 
 const addTaxReArrVAT = addTaxReArr(0.2);
 console.log(addTaxReArrVAT(200));
+ */
