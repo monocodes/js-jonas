@@ -73,7 +73,7 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
 
 // Jonas' Solution
-// It has bugs with clicking 'Ok' with empty field or just 'Cancel'
+// It has bugs with clicking 'Ok' with empty field or just 'Cancel' because it generates 'NULL'
 /* 
 'use strict';
 
