@@ -281,3 +281,74 @@ console.log(addTaxReArr(0.13)(100));
 const addTaxReArrVAT = addTaxReArr(0.2);
 console.log(addTaxReArrVAT(200));
  */
+
+/////////////////////////////////////////////////
+// Immediately Invoked Function Expressions (IIFE)
+/* 
+// IIFE was great for protecting variables from rewriting them by yourself or external libraries
+// Now it is used only to create runOnce functions
+// Today tou can just create block with {} and declare private varibales there with CONST and LET
+
+'use strict';
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+// IIFE privacy
+// Wrapping the function into parenthesis to trick the JavaScript into thinking that this is just an expression
+// statement; -> (statement)(); = expression (IIFE)
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+// console.log(isPrivate);
+// Won't work because isPrivate is inside the function scope
+
+// Arrow function
+(() => console.log('This will ALSO never run again'))();
+
+// Block privacy
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+// console.log(isPrivate);
+// Won't work becase is Private is inside the block so it's in this block scope
+console.log(notPrivate);
+// Will work because VAR doesn't create private scope inside the block
+ */
+
+/////////////////////////////////////////////////
+// Closures
+/* 
+'use strict';
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+// secureBooking()();
+// secureBooking()();
+// secureBooking()();
+
+booker(); // 1 passengers
+booker(); // 2 passengers
+booker(); // 3 passengers
+
+// A function has access to the variable environment (VE) of the execution context in which it was created
+// Closure: VE attached to the function, exactly as it was at the time and place the fucntion was created
+
+console.dir(booker);
+ */
+
+/////////////////////////////////////////////////
+// More Closure Examples
