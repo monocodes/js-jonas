@@ -284,7 +284,7 @@ console.log(addTaxReArrVAT(200));
 
 /////////////////////////////////////////////////
 // Immediately Invoked Function Expressions (IIFE)
-/* 
+
 // IIFE was great for protecting variables from rewriting them by yourself or external libraries
 // Now it is used only to create runOnce functions
 // Today tou can just create block with {} and declare private varibales there with CONST and LET
@@ -318,7 +318,6 @@ runOnce();
 // Won't work becase is Private is inside the block so it's in this block scope
 console.log(notPrivate);
 // Will work because VAR doesn't create private scope inside the block
- */
 
 /////////////////////////////////////////////////
 // Closures
@@ -352,3 +351,47 @@ console.dir(booker);
 
 /////////////////////////////////////////////////
 // More Closure Examples
+/* 
+'use strict';
+
+// Example 1
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+console.dir(f);
+
+// Re-assigning f function
+h();
+f();
+console.dir(f);
+
+// Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+const perGroup = 1000;
+boardPassengers(180, 3);
+ */
