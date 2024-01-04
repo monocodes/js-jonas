@@ -288,7 +288,7 @@ console.log(addTaxReArrVAT(200));
 // IIFE was great for protecting variables from rewriting them by yourself or external libraries
 // Now it is used only to create runOnce functions
 // Today tou can just create block with {} and declare private varibales there with CONST and LET
-
+/* 
 'use strict';
 
 const runOnce = function () {
@@ -318,6 +318,7 @@ runOnce();
 // Won't work becase is Private is inside the block so it's in this block scope
 console.log(notPrivate);
 // Will work because VAR doesn't create private scope inside the block
+ */
 
 /////////////////////////////////////////////////
 // Closures
