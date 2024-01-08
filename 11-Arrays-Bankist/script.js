@@ -61,6 +61,28 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const displayMovements = function (movements) {
+  // innerHTML = ''; - to delete all existing HTML elements in container
+  containerMovements.innerHTML = '';
+
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+
+    const html = `
+      <div class="movements__row">
+        <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+        <div class="movements__value">${mov}</div>
+      </div>
+    `;
+    // insertAdjacentHTML('afterbegin', html) - to insert html elements at the start point of the container
+    // 'afterbegin' - because 'beforeend' will convert the order of elements
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+displayMovements(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -148,7 +170,7 @@ movements.forEach(function (mov, i, arr) {
 
 /////////////////////////////////////////////////
 // forEach With Maps and Sets
-
+/* 
 // Map
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -169,6 +191,7 @@ currenciesUnique.forEach(function (value, _, map) {
   // _ - for JS it's a placeholder for unnecessary variable or parameter
   console.log(`${value}: ${_}`);
 });
+ */
 
 /////////////////////////////////////////////////
-// PROJECT: "Bankist" App
+//
