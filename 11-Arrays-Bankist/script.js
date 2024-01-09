@@ -91,7 +91,45 @@ displayMovements(account1.movements);
 
 /////////////////////////////////////////////////
 // Simple Array Methods
-/*
+/* 
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// SLICE
+// Doesn't mutate an original array
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-2));
+console.log(arr.slice(-1));
+console.log(arr.slice(1, -2));
+
+// Create a shallow copy of the array using slice method or spread operator
+console.log(arr.slice());
+console.log([...arr]);
+
+// SPLICE
+// Mutates the original array and deletes items from it
+// console.log(arr.splice(2));
+arr.splice(-1);
+console.log(arr);
+arr.splice(1, 2);
+console.log(arr);
+
+// REVERSE
+// Mutates the original array
+// Reverse order of elements
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse());
+console.log(arr2);
+
+// CONCAT
+const letters = arr.concat(arr2);
+console.log(letters);
+// Joining the arrays using spread operator
+console.log([...arr, ...arr2]);
+
+// JOIN
+console.log(letters.join(' - '));
  */
 
 /////////////////////////////////////////////////
